@@ -1,5 +1,3 @@
-# backend-practice
-
 # Backend Practice
 
 Solutions to backend challenges from [roadmap.sh](https://roadmap.sh).
