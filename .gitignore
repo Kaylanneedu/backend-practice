@@ -1,3 +1,4 @@
 __pycache__/
 *.pyc
 highscores.json
+git rm -r --cached .pytest_cache
