@@ -1,6 +1,7 @@
 from random import randint, choice
 import time
 from hints import hints
+from highscore import load_highscores, save_highscores
 
 def play(chances, level_name):
     print(f"""
@@ -48,6 +49,17 @@ def play(chances, level_name):
                     print(f"Congratulations! You guessed the correct number in {attempts} attempts")
                     elapsed = time.time() - start_time
                     print(f"Time taken to WIN!: {elapsed:.2f} seconds.")
+
+                    scores = load_highscores()
+                    current_best = scores.get(level_name)
+
+                    if current_best is None or attempts < current_best:
+                        scores[level_name] = attempts
+                        save_highscores(scores)
+                        print(f"New high score for {level_name}: {attempts} attempts!")
+                    else:
+                        print(f"Current high score for {level_name} remains: {current_best} attempts.")
+
                     break
     
         except ValueError:
