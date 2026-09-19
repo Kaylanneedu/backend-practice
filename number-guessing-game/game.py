@@ -17,11 +17,9 @@ def play(chances, level_name):
     start_time =time.time()
     available_hints = hints.copy()
     
-    print(answer)
     while chances > 0:
         guess = input("Enter your guess (or 'h' for a hint):  ")
         print()
-    
         if guess.lower() == 'h':
             if available_hints:
                 chosen = choice(available_hints)
@@ -61,7 +59,6 @@ def play(chances, level_name):
                         print(f"Current high score for {level_name} remains: {current_best} attempts.")
 
                     break
-    
         except ValueError:
             print("Invalid input! Please enter a number.")
     
